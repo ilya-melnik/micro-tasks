@@ -25,15 +25,15 @@ export const NewComponent = (props: NewComponentType) => {
 
 
             <table>
-                    {props.students.map((st, index) => {
-                        return (
-                            <tr>
-                                <td>{index+1}</td>
-                                <td>{st.name}</td>
-                                <td>{st.age}</td>
-                            </tr>)
+                {props.students.map((st, index) => {
+                    return (
+                        <tr>
+                            <td>{index + 1}</td>
+                            <td>{st.name}</td>
+                            <td>{st.age}</td>
+                        </tr>)
 
-                    })}
+                })}
             </table>
         </div>
     );

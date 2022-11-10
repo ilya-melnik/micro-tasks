@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {NewComponent} from "./NewComponent";
+import {Button} from "./components/Button";
+
 
 const students = [
     {id: 1, name: "James", age: 8},
@@ -19,12 +19,32 @@ const students = [
 
 
 function App() {
+    const Button1Foo = (subscriber: string, age: number) => {
+        console.log(subscriber, age)
+    }
+    const Button2Foo = (subscriber: string, age: number) => {
+        console.log(subscriber, 45)
+    }
+    const JustButton = () => {
+        console.log('I\'m just button')
+    }
 
-  return (
-    <div className="App">
-        <NewComponent  students={students}/>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            {/*<button>MyYoutubeChanel - 1</button>*/}
+            {/*<button>MyYoutubeChanel - 2</button>*/}
+
+            <Button name={'MyYoutubeChanel-1'} callBack={() => {
+                Button1Foo('ILLIA', 22)
+            }}/>
+
+            <Button name={'MyYoutubeChanel-2'} callBack={() => {
+                Button2Foo('Vasya', 33)
+            }}/>
+            <Button name={'justButton'} callBack={JustButton}/>
+        </div>
+    );
 }
 
 export default App;
