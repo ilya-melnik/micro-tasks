@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Button} from "./components/Button";
+import {Counter} from "./components/useState";
 
 
 const students = [
@@ -28,21 +29,20 @@ function App() {
     const JustButton = () => {
         console.log('I\'m just button')
     }
-
+    //-----------------------------------------------------------
 
     return (
         <div className="App">
-            {/*<button>MyYoutubeChanel - 1</button>*/}
-            {/*<button>MyYoutubeChanel - 2</button>*/}
-
             <Button name={'MyYoutubeChanel-1'} callBack={() => {
                 Button1Foo('ILLIA', 22)
             }}/>
-
             <Button name={'MyYoutubeChanel-2'} callBack={() => {
                 Button2Foo('Vasya', 33)
             }}/>
             <Button name={'justButton'} callBack={JustButton}/>
+            {/*-------------------------------------------------------------*/}
+           <Counter />
+
         </div>
     );
 }
