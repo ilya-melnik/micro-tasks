@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Button} from "./components/Button";
 import {Counter} from "./components/useState";
+import {Filter} from "./components/Filter";
 
 
 const students = [
@@ -42,7 +43,7 @@ function App() {
             <Button name={'justButton'} callBack={JustButton}/>
             {/*-------------------------------------------------------------*/}
            <Counter />
-
+            <Filter />
         </div>
     );
 }
