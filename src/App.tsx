@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './App.css';
 
 import {Fullinput} from "./components/input/FulIinput";
+import {Button} from "./components/input/Button";
+import {Input} from "./components/input/Input";
 
 
 // export type MesType = {
@@ -14,13 +16,24 @@ function App() {
         {message: 'message2'},
         {message: 'message3'},
     ])
+
+    let [title, setTitle] = useState("")
+
         const addMessage = (title:string) => {
             let newMessage =  {message: title}
             setMessages([newMessage,...messages])
     }
+    const collBackButtonHandler = () => {
+        addMessage(title)
+        setTitle('')
+    }
+
     return (
         <div className="App">
-            <Fullinput  addMessage={addMessage}/>
+            {/*<Fullinput  addMessage={addMessage}/>*/}
+            <Input setTitle={setTitle} title={title}/>
+            <Button name={'+'} callBack={collBackButtonHandler} />
+
             {
                 messages.map((el, index) => {
                     return (
