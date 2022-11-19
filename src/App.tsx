@@ -5,11 +5,6 @@ import {Fullinput} from "./components/input/FulIinput";
 import {Button} from "./components/input/Button";
 import {Input} from "./components/input/Input";
 
-
-// export type MesType = {
-//     message: string
-// }
-
 function App() {
     let [messages, setMessages] = useState(() => [
         {message: 'message1'},
@@ -19,9 +14,9 @@ function App() {
 
     let [title, setTitle] = useState("")
 
-        const addMessage = (title:string) => {
-            let newMessage =  {message: title}
-            setMessages([newMessage,...messages])
+    const addMessage = (title: string) => {
+        let newMessage = {message: title}
+        setMessages([newMessage, ...messages])
     }
     const collBackButtonHandler = () => {
         addMessage(title)
@@ -32,7 +27,7 @@ function App() {
         <div className="App">
             {/*<Fullinput  addMessage={addMessage}/>*/}
             <Input setTitle={setTitle} title={title}/>
-            <Button name={'+'} callBack={collBackButtonHandler} />
+            <Button name={'+'} callBack={collBackButtonHandler}/>
 
             {
                 messages.map((el, index) => {
